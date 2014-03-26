@@ -16,7 +16,7 @@ ScatterMatrix.prototype.cellSize = function(n) {
 ScatterMatrix.prototype.onData = function(cb) {
   if (this.__data) { cb(); return; }
   var self = this;
-  d3.csv(self.__url, function(data) {
+  d3.tsv(self.__url, function(data) {
     self.__data = data;
     cb();
   });
